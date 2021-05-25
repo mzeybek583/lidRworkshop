@@ -11,7 +11,7 @@ To follow this workshop you need to download the content of this repository. It 
 
 ## 3. R Packages
 
-You need to install the `lidR` package in its latest version (v >= 3.1.2). 
+You need to install the `lidR` package in its latest version (v >= 3.1.3). 
 
 ```r
 install.packages("lidR")

@@ -95,9 +95,19 @@ filter_noise = function(las, sensitivity)
   return(las)
 }
 
-las = readLAS("data/Farm_A//PRJ_A_207480_7357420_g_c_d_n_u.laz")
+las = readLAS("data/Farm_A/PRJ_A_207480_7357420_g_c_d_n_u.laz")
 nonoise = filter_noise(las, 1.2)
 
 # - Explain what this function does
 # - Apply this function to the whole collection using catalog_apply()
-# - Imagine what kind of new application you could designed
+
+# - Design an application that retrieves the polygon of each flightiness (difficult)
+#   The output should look like
+flightlines = st_read("data/flightlines.shp")
+plot(flightlines, col = sf.colors(6, alpha = 0.5))
+plot(flightlines[3,])
+# You can use:
+# - concaveman::concaveman
+# - sf
+# - dplyr
+# Stars by designing a test function that works on a LAS object and later apply on the collection
