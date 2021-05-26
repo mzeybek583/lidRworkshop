@@ -129,20 +129,20 @@ plan(sequential)
 #  H. Exercises and questions
 # ==========================================
 
-# - Map the point density of the coverage
+# 1. Map the point density of the coverage
 
-# - Create a new dataset with an homogeneous density of 10 pts/m2 with decimate_points()
-#   This exercise is more complex because it involves options not seen yet.
-#   -> opt_output_file to redirect the output to files
-#   -> templates to name the files
-#   Try what is coming to your mind and read the documentation carefully when you
-#   receive an error
+# 2. Create a new dataset with an homogeneous density of 10 pts/m2 with decimate_points()
+#    This exercise is more complex because it involves options not seen yet.
+#    -> opt_output_file to redirect the output to files
+#    -> templates to name the files
+#    Try what is coming to your mind and read the documentation carefully when you
+#    receive an error
 
-# - Map the point density of this new dataset
+# 3. Map the point density of this new dataset
 
-# - Read the whole decimated point-cloud which (is not that big but don't do that we regular
-#   collections)
+# 4. Read the whole decimated point-cloud (which is not that big but don't do that with a
+#    regular collection)
 
-# - Study the function catalog_retile() and find the parameters to merge the dataset
-#   into bigger tiles
+# 5. Study the function catalog_retile() and find the parameters to merge the dataset
+#    into bigger tiles
 

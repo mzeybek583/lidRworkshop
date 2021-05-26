@@ -20,7 +20,7 @@ col2 = pastel.colors(900)
 chm = grid_canopy(las, 0.5, p2r(0.15))
 plot(chm, col = col1)
 
-# 2. OptionaLly smooth the CHM
+# 2. Optionally smooth the CHM
 # ----------------------------
 
 kernel = matrix(1,3,3)
@@ -60,7 +60,7 @@ trees = dalponte2016(chm = chm, treetops = ttops)() # Notice the parenthesis at 
 plot(trees, col = col2)
 plot(ttops, add = TRUE, cex = 0.5)
 
-# B. Point cloud based methods (no CHM)
+# B. Point-cloud based methods (no CHM)
 # =====================================
 
 # 1. Tree detection
@@ -78,7 +78,7 @@ las = segment_trees(las, li2012())
 
 plot(las, color = "treeID", colorPalette = col2)
 
-# This algorithm does not seem pertinent for such a dataset.
+# This algorithm does not seem pertinent for this dataset.
 
 # C. Extraction of metrics
 # ==========================
@@ -89,14 +89,14 @@ las = segment_trees(las, dalponte2016(schm, ttops))
 
 plot(las, color = "treeID", colorPalette = col2)
 
-# 1. tree_metrics works like grid_metrics
+# 1. tree_metrics() works like grid_metrics()
 # ----------------------------------------
 
 metrics = tree_metrics(las, ~list(n = length(Z)))
 metrics
 spplot(metrics, "n", cex = 0.8)
 
-# 2. It maps any user's function at the tree level like grid_metrics
+# 2. It maps any user's function at the tree level like grid_metrics()
 # -------------------------------------------------------------
 
 f = function(x, y)
@@ -136,18 +136,23 @@ spplot(cvx_hulls, "convhull_area")
 spplot(cvx_hulls, "Z")
 
 
-# E. Exercises and question
+# E. Exercises and questions
 # ==========================
 
 # Using:
 las = readLAS("data/example_corrupted.laz", select = "xyz")
 
-# - Run las_check() and fix the errors
-# - Find the trees and count the trees
-# - Compute and map the density of trees with a 10 m resolution [1]
-# - Segment the trees
-# - Assuming that the biomass of a tree can be estimated using the crown area and the mean Z
-#   of the point with the formula <2.5 * area + 3 * mean Z>. Estimate the biomass of each tree.
-# - Map the total biomass at a resolution of 10 m. The output is a mixed of ABA and ITS [1]
-#
-# [1] Hint: use the raster package to rasterize spatial object with the function rasterize()
+# 1. Run las_check() and fix the errors
+
+# 2. Find the trees and count the trees
+
+# 3. Compute and map the density of trees with a 10 m resolution [1]
+
+# 4. Segment the trees
+
+# 5. Assuming that the biomass of a tree can be estimated using the crown area and the mean Z
+#   of the points with the formula <2.5 * area + 3 * mean Z>. Estimate the biomass of each tree.
+
+# 6. Map the total biomass at a resolution of 10 m. The output is a mixed of ABA and ITS [1]
+
+#' [1] Hint: use the 'raster' package to rasterize spatial object with the function rasterize()

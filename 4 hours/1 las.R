@@ -37,7 +37,7 @@ format(object.size(las), "Mb")
 # B. Optimized usage
 # =======================
 
-# 1. Use the select argument to load only the attribute of interest
+# 1. Use the argument 'select' to load only the attributes of interest
 # ------------------------------------------------------------------
 
 las = readLAS("data/MixedEucaNat_normalized.laz", select = "xyz")
@@ -50,7 +50,7 @@ plot(las)
 plot(las, color = "Intensity")
 
 
-# 2. Use the filter argument to load only points of interest
+# 2. Use the argument 'filter' to load only points of interest
 # ----------------------------------------------------------
 
 las = readLAS("data/MixedEucaNat_normalized.laz", filter = "-keep_first")
@@ -60,7 +60,7 @@ format(object.size(las), "Mb")
 
 plot(las)
 
-# 3. Use the filter argument to apply a transformation to the points on-the-fly
+# 3. Use the argument 'filter' to apply a transformation to the points on-the-fly
 # -----------------------------------------------------------
 
 readLAS(filter = "-h")
@@ -91,13 +91,15 @@ las_check(las)
 
 las = readLAS("data/MixedEucaNat_normalized.laz")
 
-# - What are the withheld point?
-# - Where are they?
-# - Read the file dropping the withheld points
-# - The withheld points seem legit points. Try to load the file including the withheld point
-#   but get rid of the warning (without using suppressWarnings()). (Hint: use transformation)
-# - Load only the ground points and plot the point cloud by the return number of the point.
-#   Do it loading the strict minimal amount of memory (4.7 Mb)
+# 1. What are the withheld points? Where are they?
+
+# 2. Read the file dropping the withheld points
+
+# 3. The withheld points seem legit points. Try to load the file including the withheld points
+#    but get rid of the warning (without using suppressWarnings()). (Hint: use transformation)
+
+# 4. Load only the ground points and plot the point-cloud coloured by the return number of the point.
+#    Do it loading the strict minimal amount of memory (4.7 Mb)
 
 
 

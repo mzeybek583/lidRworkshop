@@ -13,13 +13,13 @@ col = height.colors(50)
 # A. Basic usage
 # =================
 
-# Mean height of points within 10x10 m pixel
+# Mean height of points within 10x10 m pixels
 
 hmean = grid_metrics(las, ~mean(Z), 10)
 hmean
 plot(hmean, col = col)
 
-# Max height of points within 10x10 m pixel
+# Max height of points within 10x10 m pixels
 
 hmax = grid_metrics(las, ~max(Z), 10)
 hmax
@@ -52,15 +52,15 @@ X = grid_metrics(las, ~f(Z, Intensity), 10)
 
 plot(X, col = col)
 
-# C. Exercise and questions
+# C. Exercises and questions
 # ===========================
 
 # 1. Assuming the biomass is predicted by this equation <B = 0.5 * mean Z + 0.9 * 90th percentile of Z>
 #    applied on first returns only, map the biomass on this tiny file
 
-# 2. Map the density of ground returns with grid_metric with a resolution of 5 meters
+# 2. Map the density of ground returns with grid_metric() with a resolution of 5 meters
 
-# 3. Map the pixel that are flat (roads) using stdshapmetrics
+# 3. Map the pixel that are flat (roads) using 'stdshapemetrics'
 
 
 

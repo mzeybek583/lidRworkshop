@@ -36,7 +36,7 @@ plot(subsets1[[1]])
 plot(subsets1[[2]])
 
 
-# D. Extraction of complex geometries from shapefile
+# D. Extraction of complex geometries from shapefiles
 # ====================================
 
 planting = shapefile("data/shapefiles/MixedEucaNat.shp")
@@ -57,7 +57,7 @@ plot(planting, add = TRUE, col = "#08B5FF39")
 
 eucalyptus = clip_roi(las, planting)
 
-# E. Exercise and questions
+# E. Exercises and questions
 # ====================================
 
 # Using:
@@ -65,7 +65,9 @@ plots = shapefile("data/shapefiles/MixedEucaNatPlot.shp")
 plot(las@header, map = FALSE)
 plot(plots, add = TRUE)
 
-# - clip the 5 plots with a radius of 11.3 m
-# - clip a transect from A(203850, 7358950) to B(203950, 7959000)
-# - clip a transect from A(203850, 7358950) to B(203950, 7959000) but rotate it in such a way
-#   that it is no longer in the XY diagonal (convenient for plotting for example)
+# 1. clip the 5 plots with a radius of 11.3 m
+
+# 2. clip a transect from A(203850, 7358950) to B(203950, 7959000)
+
+# 3. clip a transect from A(203850, 7358950) to B(203950, 7959000) but rotate it in such a way
+#    that it is no longer in the XY diagonal (convenient for plotting for example)

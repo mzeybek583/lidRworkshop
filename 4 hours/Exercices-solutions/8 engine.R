@@ -1,5 +1,6 @@
-# - In example 2 (section B) what last line `m <- m[m$treeID %in% p$treeID,]` does?
-#   Try to remove it to see what happens (use only 4 tiles to see something)
+# 1. In example 2 (section B) what does last line `m <- m[m$treeID %in% p$treeID,]`?
+#    Try to remove it to see what happens (use only 4 tiles to see something)
+
 subctg = catalog_select(ctg)
 
 my_process = function(cl) {
@@ -28,8 +29,9 @@ m = catalog_apply(subctg, my_process, .options = options)
 plot(m, col = rgb(0,0,1,0.3))
 
 
-# The following is a simple (and a bit naive) function to remove high noise points
-# - Apply this function to the whole collection  using catalog apply
+# 2. The following is a simple (and a bit naive) function to remove high noise points.
+#    - Explain what this function does
+#    - Apply this function to the whole collection using catalog_apply()
 filter_noise = function(las, sensitivity)
 {
   p95 <- grid_metrics(las, ~quantile(Z, probs = 0.95), 10)
@@ -62,9 +64,10 @@ output = catalog_apply(ctg, filter_noise_collection, sensitivity = 1.2, .options
 #plot(las)
 
 
-# -------------------------------------------
+# 3. Design an application that retrieves the polygon of each flightiness (hard)
+#    You can use concaveman::concaveman, sf, dplyr. Stars by designing a test function that
+#    works on a LAS object and later apply on the collection. The output should look like:
 
-# - Design an application that retrieves the polygon of each flightlines
 library(sf)
 
 # Read the catalog

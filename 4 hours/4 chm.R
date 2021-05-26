@@ -19,7 +19,7 @@ plot(las)
 # A. Point-to-raster based method
 # ===============================
 
-# Simple method that attributes the elevation of the highest point to each pixel
+# Simple method that assigns the elevation of the highest point to each pixel
 chm = grid_canopy(las, 2, p2r())
 plot(chm, col = col)
 
@@ -39,11 +39,11 @@ plot(chm, col = col)
 chm = grid_canopy(las, 0.5, p2r())
 plot(chm, col = col)
 
-# The option subcircle turns each point into a disc of 8 points with a radius r
+# The option 'subcircle' turns each point into a disc of 8 points with a radius r
 chm = grid_canopy(las, 0.5, p2r(0.15))
 plot(chm, col = col)
 
-# We can increase the radius but it does not necessarily have any meaning
+# We can increase the radius but it has not necessarily any meaning
 chm = grid_canopy(las, 0.5, p2r(0.8))
 plot(chm, col = col)
 
@@ -54,7 +54,7 @@ plot(chm, col = col)
 # B Triangulation based methods
 # ==============================
 
-# Triangluation of first returns
+# Triangulation of first returns
 chm = grid_canopy(las, 1, dsmtin())
 plot(chm, col = col)
 
@@ -67,7 +67,7 @@ max_edge = c(0, 1.35)
 chm = grid_canopy(las, 0.5, pitfree(thresholds, max_edge))
 plot(chm, col = col)
 
-# Option subcircle
+# Option 'subcircle'
 chm = grid_canopy(las, 0.5, pitfree(thresholds, max_edge, 0.1))
 plot(chm, col = col)
 
@@ -76,11 +76,11 @@ plot(chm, col = col)
 # ================
 
 # Usually the CHM can be post-processed. Often post-processing consists in smoothing.
-# lidR has no tool for that. Indeed lidR is point cloud oriented. Once you have
-# a raster, it is the user responsibility to manipulate this kind of data. The user is free
-# to do whatever he wants within R or within external software such as GIS tools.
+# lidR has no tool for that. Indeed lidR is point-cloud oriented. Once you have
+# a raster, it is the user responsibility to manipulate this kind of data. The users are free
+# to do whatever they want within R or within external software such as GIS tools.
 #
-# Here we can use the raster package and the focal function
+# Here we can use the 'raster' package and the focal() function
 
 ker <- matrix(1,3,3)
 schm <- focal(chm, w = ker, fun = mean, na.rm = TRUE)

@@ -17,10 +17,10 @@ An R package to work with LiDAR data developed at Laval University (Québec)
 Four hours workshop
 ========================================================
 
-It is not possible to master `lidR` in 4 hours so:
+It is not possible to master `lidR` within 4 hours so:
 
 - This workshop will only try to present an overview of what can be done with lidR
-- I'm expecting that the participants to be able to know if lidR fits their need at the end of the workshop
+- I'm expecting the participants to be able to know if lidR fits their needs at the end of the workshop
 
 Other resources (required for the exercises):
 
@@ -50,7 +50,7 @@ Workshop
 - Open the `lidRworkshop.Rproj` file in RStudio. Open the files that are in the "`4 hours/`" folder
 - The code we will use is already written. The workshop consists in running the scripts while I'm giving explanations.
 - At the end of each script there are some exercises that will often require to read the documentation to be solved.
-- There are only few comments in the code. Participants are invited at using R comments to take notes
+- There are only few comments in the code. Participants are invited to use R comments to take notes
 
 Do not hesitate to ask questions at any moment. I'm very unlikely to spot any "virtual hand" raised on Zoom, Team or whatever we are using so, please just speak if you have a question :-)
 

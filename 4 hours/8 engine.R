@@ -12,7 +12,7 @@ library(lidR)
 # ========================================================================================
 
 
-# A. Example of catalog apply
+# A. Example of catalog_apply()
 # =====================================
 
 # Problem: how to apply the following on a collection?
@@ -53,7 +53,7 @@ ri = catalog_apply(ctg, grid_rumple_index, res1 = 10, res2 = 0.5, .options = opt
 
 plot(ri, col = height.colors(50))
 
-# B. Example 2 of catalog apply
+# B. Example 2 of catalog_apply()
 # =====================================
 
 my_process = function(cl) {
@@ -81,11 +81,13 @@ plot(m)
 # C. Exercises
 # ====================================
 
-# - In example 2 (section B) what last line `m <- m[m$treeID %in% p$treeID,]` does?
-#   Try to remove it to see what happens (use only 4 tiles to see something)
+# 1. In example 2 (section B) what does last line `m <- m[m$treeID %in% p$treeID,]`?
+#    Try to remove it to see what happens (use only 4 tiles to see something)
 subctg = catalog_select(ctg)
 
-# The following is a simple (and a bit naive) function to remove high noise points
+# 2. The following is a simple (and a bit naive) function to remove high noise points.
+#    - Explain what this function does
+#    - Apply this function to the whole collection using catalog_apply()
 filter_noise = function(las, sensitivity)
 {
   p95 <- grid_metrics(las, ~quantile(Z, probs = 0.95), 10)
@@ -98,16 +100,13 @@ filter_noise = function(las, sensitivity)
 las = readLAS("data/Farm_A/PRJ_A_207480_7357420_g_c_d_n_u.laz")
 nonoise = filter_noise(las, 1.2)
 
-# - Explain what this function does
-# - Apply this function to the whole collection using catalog_apply()
 
-# - Design an application that retrieves the polygon of each flightiness (difficult)
-#   The output should look like
+# 3. Design an application that retrieves the polygon of each flightiness (hard)
+#    You can use concaveman::concaveman, sf, dplyr. Stars by designing a test function that
+#    works on a LAS object and later apply on the collection. The output should look like:
 flightlines = st_read("data/flightlines.shp")
 plot(flightlines, col = sf.colors(6, alpha = 0.5))
 plot(flightlines[3,])
-# You can use:
-# - concaveman::concaveman
-# - sf
-# - dplyr
-# Stars by designing a test function that works on a LAS object and later apply on the collection
+
+
+

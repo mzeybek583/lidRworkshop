@@ -20,7 +20,5 @@ install.packages("lidR")
 The following packages can be installed as well. They enhance the package `lidR` and are useful in some examples. But you can use `lidR` without them.
 
 ```r
-install.packages("mapview", "progress", "concaveman")
+install.packages("mapview", "progress")
 ```
-
-You may also want the package `pryr` to run some examples but it is very optional.

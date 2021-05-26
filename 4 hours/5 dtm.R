@@ -54,10 +54,10 @@ plot(nlas)
 gnd = filter_ground(nlas)
 hist(gnd$Z, breaks = seq(-1.5,1.5,0.05))
 
-# C. Exercise and questions
+# C. Exercises and questions
 # =========================
 
-# - Plot and compare these two normalized point-cloud. Why they look different? Fix that.
+# 1. Plot and compare these two normalized point-clouds. Why do they look different? Fix that.
 
 las1 = readLAS("data/MixedEucaNat.laz", filter = "-set_withheld_flag 0")
 nlas1 = normalize_height(las1, tin())
@@ -66,9 +66,14 @@ plot(nlas1)
 plot(nlas2)
 
 
-# - clip a plot somewhere in MixedEucaNat.laz (the non-normalized file)
-# - compute a DTM for this plot. Which method are you choosing and why?
-# - compute a DSM (digital surface model)
-# - normalize the plot
-# - compute a CHM
-# - estimate some metrics of interest in this plot with cloud_metric()
+# 2. clip a plot somewhere in MixedEucaNat.laz (the non-normalized file)
+
+# 3. compute a DTM for this plot. Which method are you choosing and why?
+
+# 4. compute a DSM (digital surface model)
+
+# 5. normalize the plot
+
+# 6. compute a CHM
+
+# 7. estimate some metrics of interest in this plot with cloud_metric()
